@@ -1,6 +1,25 @@
 Benchmark Test
 ==============
 
+### Installing Redis Node
+```
+#!/bin/bash
+#---------------------------------------------------------------------------#
+# yum install vim -y
+# yum install epel-release
+# yum install redis -y
+#---------------------------------------------------------------------------#
+INTERNAL_IP_ADDRESS=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | \
+        grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
+sed -i "s/bind 127.0.0.1/bind $INTERNAL_IP_ADDRESS/" /etc/redis.conf
+
+#---------------------------------------------------------------------------#
+# systemctl start redis.service
+# systemctl enable redis
+# systemctl status redis.service
+#---------------------------------------------------------------------------#
+```
+
 
 ### Bentchmark Result on Local Virtual Machines
 ```
