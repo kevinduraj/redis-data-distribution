@@ -1,0 +1,13 @@
+---
+name: Redis SHA256 Dev Cluster
+nodes: 4
+
+address:
+  node1: 192.168.0.29
+  node2: 192.168.0.26
+  node3: 192.168.0.27
+  node4: 192.168.0.30
+
+roles:
+  - Cluster1 
+  - Cluster2
